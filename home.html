@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="navbar bg-base-100 shadow-sm">
+            <div class="flex-1">
+                <div class="flex items-center gap-3">
+                    <img class="w-9" src="./assets/github-logo.png" alt="">
+                    <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+                </div>
+            </div>
+            <div class="flex gap-2 relative">
+                <i class="fa-brands fa-sistrix absolute left-3 top-3 z-10"></i>
+                <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto pl-9" />
+                <button class="btn btn-primary">+ New Issue</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-11/12 mx-auto mt-8">
+        <!-- banner section -->
+        <section>
+            <div class="p-5 bg-stone-50 shadow-lg">
+                <button class="btn py-3 px-8 btn-primary">All</button>
+                <button class="btn py-3 px-8">Open</button>
+                <button class="btn py-3 px-8">closed</button>
+            </div>
+
+            <div class="p-5 bg-stone-50 mt-4 shadow-lg flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-[#ECE4FF] rounded-full">
+                        <img class="p-3" src="./assets/Aperture.png" alt="">
+                    </div>
+                    <div>
+                        <h2 class="font-semibold text-xl">50 Issues</h2>
+                        <h3 class="text-[#64748B]">Track and manage your project issues</h3>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="h-3 w-3 bg-green-400 rounded-full"></span>
+                        <span>Open</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="h-3 w-3 bg-purple-500 rounded-full"></span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- card-section -->
+        <section id="card-container" class="mt-8 p-4 grid grid-cols-2 md:grid-cols-4 gap-3.5 bg-gray-50">
+            
+        </section>
+    </main>
+
+    <script src="./script/home.js"></script>
+</body>
+
+</html>

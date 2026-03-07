@@ -28,8 +28,8 @@
             </div>
             <div class="flex gap-2 relative">
                 <i class="fa-brands fa-sistrix absolute left-3 top-3 z-10"></i>
-                <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto pl-9" />
-                <button class="btn btn-primary">+ New Issue</button>
+                <input id="input-search" type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto pl-9" />
+                <button id="search-btn" class="btn btn-primary">search</button>
             </div>
         </div>
     </header>
@@ -38,9 +38,10 @@
         <!-- banner section -->
         <section>
             <div class="p-5 bg-stone-50 shadow-lg">
-                <button class="btn py-3 px-8 btn-primary">All</button>
-                <button class="btn py-3 px-8">Open</button>
-                <button class="btn py-3 px-8">closed</button>
+                <button id="all-btn" onclick="displayAllIssue(labIssueData)"
+                    class="btn py-3 px-8 btn-primary">All</button>
+                <button id="open-btn" onclick="displayOpenIssue(labIssueData)" class="btn py-3 px-8">Open</button>
+                <button id="closed-btn" onclick="displayClosedIssue(labIssueData)" class="btn py-3 px-8">closed</button>
             </div>
 
             <div class="p-5 bg-stone-50 mt-4 shadow-lg flex justify-between items-center">
@@ -49,7 +50,7 @@
                         <img class="p-3" src="./assets/Aperture.png" alt="">
                     </div>
                     <div>
-                        <h2 class="font-semibold text-xl">50 Issues</h2>
+                        <h2 class="font-semibold text-xl"><span id="issues-count">0</span> Issues</h2>
                         <h3 class="text-[#64748B]">Track and manage your project issues</h3>
                     </div>
                 </div>
@@ -68,9 +69,31 @@
 
         <!-- card-section -->
         <section id="card-container" class="mt-8 p-4 grid grid-cols-2 md:grid-cols-4 gap-3.5 bg-gray-50">
-            
+
         </section>
+        <span id="spinner"
+            class="loading mx-auto flex justify-center items-center loading-spinner text-neutral hidden"></span>
+
+
+
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+        <dialog id="show-modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <div id="modal-container" class="space-y-5">
+                    
+                </div>
+
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn btn-primary">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
+
 
     <script src="./script/home.js"></script>
 </body>

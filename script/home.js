@@ -8,35 +8,35 @@ const spinner = document.getElementById("spinner")
 const searchBtn = document.getElementById("search-btn")
 // console.log(openBtnText.toLowerCase())
 
-searchBtn.addEventListener("click", () =>{
-const inputSearch = document.getElementById("input-search")
-const searchValue = inputSearch.value.trim().toLowerCase();
+searchBtn.addEventListener("click", () => {
+    const inputSearch = document.getElementById("input-search")
+    const searchValue = inputSearch.value.trim().toLowerCase();
     console.log(searchValue)
     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
-    .then((res) => res.json())
-    .then((searchData) => {
-    searchCard = searchData.data
-    displayLoadLabIssue(searchCard)
-    openBtn.classList.remove("btn-primary")
-    allBtn.classList.remove("btn-primary")
-    closedBtn.classList.remove("btn-primary")
-})    
+        .then((res) => res.json())
+        .then((searchData) => {
+            searchCard = searchData.data
+            displayLoadLabIssue(searchCard)
+            openBtn.classList.remove("btn-primary")
+            allBtn.classList.remove("btn-primary")
+            closedBtn.classList.remove("btn-primary")
+        })
 })
 
 const createElements = (array) => {
     const createHtml = array.map((element) => `
-                        <div
+                        <span
                         class="flex items-center gap-1 bg-[#FFF8DB] border-2 rounded-full px-2 border-[#FDE68A]">
-                        <div class="text-[#EF4444] text-[12px] font-medium"><i class="fa-solid fa-bug"></i> ${element}</div>
-                        </div>`)
+                        <span class="text-[#EF4444] text-[12px] font-medium"><i class="fa-solid fa-bug"></i> ${element}</span>
+                        </span>`)
     return createHtml.join(" ")
 }
-const manageSpinner = (status) =>{
-    if(status === true){
+const manageSpinner = (status) => {
+    if (status === true) {
         spinner.classList.remove('hidden')
         document.getElementById('card-container').classList.add('hidden')
     }
-    else{
+    else {
         spinner.classList.add('hidden')
         document.getElementById('card-container').classList.remove('hidden')
     }
@@ -52,13 +52,13 @@ const loadLabIssue = () => {
         })
 };
 
-const displayModal = (id) =>{
+const displayModal = (id) => {
     fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
-    .then((res) => res.json())
-    .then((data) => loadDisplayModal(data.data))
+        .then((res) => res.json())
+        .then((data) => loadDisplayModal(data.data))
 }
 
-const loadDisplayModal = (data) =>{
+const loadDisplayModal = (data) => {
     console.log(data)
     const modalContainer = document.getElementById("modal-container")
     modalContainer.innerHTML = `
@@ -67,10 +67,10 @@ const loadDisplayModal = (data) =>{
                         <span class="text-[12px] text-[#ffffff] font-medium bg-[#00A96E] rounded-full px-4 py-1">${data.status}</span>
                         
                         <span class="text-[12px] text-[#64748B]">${data.author}</span>
-                        <span class="text-[12px] text-[#64748B]">${data.createdAt? data.createdAt : "not found"}</span>
+                        <span class="text-[12px] text-[#64748B]">${data.createdAt ? data.createdAt : "not found"}</span>
                     </div>
                     <div class="inline-block">
-                    <div class="">
+                    <div class="flex gap-3">
                         ${createElements(data.labels)}
                     </div>
                 </div>
@@ -144,7 +144,7 @@ const displayLoadLabIssue = (data) => {
         const div = document.createElement("div")
         div.innerHTML = `
             <div 
-            class="${ele.status == "open"? 'border-t-4 border-[#00A96E]': 'border-t-4 border-[#A855F7]'} shadow-2xl rounded-xl bg-stone-50 h-full" onclick="displayModal(${ele.id})">
+            class="${ele.status == "open" ? 'border-t-4 border-[#00A96E]' : 'border-t-4 border-[#A855F7]'} shadow-2xl rounded-xl bg-stone-50 h-full" onclick="displayModal(${ele.id})">
                 <div class="space-y-3 p-4">
                     <div class="flex justify-between">
                     <img src="${ele.status === 'closed' ? './assets/./Closed- Status .png' : './assets/Open-Status.png'}" alt="">

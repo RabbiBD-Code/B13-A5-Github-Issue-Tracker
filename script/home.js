@@ -69,7 +69,7 @@ const loadDisplayModal = (data) => {
                         <span class="text-[12px] text-[#64748B]">${data.author}</span>
                         <span class="text-[12px] text-[#64748B]">${data.createdAt ? data.createdAt : "not found"}</span>
                     </div>
-                    <div class="inline-block">
+                    <div class="space-y-4">
                     <div class="flex gap-3">
                         ${createElements(data.labels)}
                     </div>

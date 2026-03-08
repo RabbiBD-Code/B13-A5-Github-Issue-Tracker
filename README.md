@@ -1,3 +1,41 @@
+
+
+
+What is the difference between var, let, and const?
+
+var:  1. var is a function scope. not a block scope.
+      2. var can be re decleared
+      3. var can updated
+      4. var hoisted.
+
+let:  1. let is a block scope.
+      2. let car not be re decleared.
+      3. let can not updated.
+const: 1. const used when should not be change.
+      2. const can not be re decleared
+      3. const can not updated
+
+
+The Spread Operator (...)in JavaScript is used to expand or spread elements of an array, object, or iterable into individual elements.
+
+What is the difference between map(), filter(), and forEach()?
+
+map() : map return a new array. don't change orginal array.
+filter(): filter return a new array. filter return a true value.
+forEach(): forEach not return new array.
+
+What is an arrow function?
+An Arrow Function is a shorter syntax for writing functions in JavaScript. single line code not used return keyword.
+
+What are template literals?
+Template Literals are a modern way to create strings in JavaScript.
+
+
+
+
+
+
+
 # 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
 
 # **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
@@ -125,5 +163,3 @@ Password: admin123
 - **Live Site Link:**
 
 ---
-
-

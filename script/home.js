@@ -28,7 +28,7 @@ const createElements = (array) => {
                         <span
                         class="flex items-center gap-1 bg-[#FFF8DB] border-2 rounded-full px-2 border-[#FDE68A]">
                         <span class="text-[#EF4444] text-[12px] font-medium"><i class="fa-solid fa-bug"></i> ${element}</span>
-                        </span>`)
+                        </span>`);
     return createHtml.join(" ")
 }
 const manageSpinner = (status) => {
@@ -75,7 +75,7 @@ const loadDisplayModal = (data) => {
                     </div>
                 </div>
                     <p class="text-[#64748B]">${data.description}</p>
-                    <div class="bg-[#F8FAFC] rounded-xl flex p-3 gap-24 items-center">
+                    <div class="bg-[#F8FAFC] rounded-xl flex p-3 gap-32 items-center">
                          <div>
                             <p class="text-[#64748B]">Assignee:</p>
                             <p class="font-semibold">${data.assignee}</p>
